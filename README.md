@@ -11,6 +11,8 @@ Spring Boot REST API for 5COSC019W Object Oriented Programming (University of We
 | GET | `/hello` | Greeting |
 | GET | `/goodbye` | Goodbye message |
 | GET | `/status` | Status with today's date |
+| GET | `/products/{id}` | A product by id |
+| GET | `/customers/{id}` | A customer with a nested address |
 | GET | `/info` | About the application |
 
 ## Run
@@ -20,3 +22,7 @@ Spring Boot REST API for 5COSC019W Object Oriented Programming (University of We
 ```
 
 Then open http://localhost:8080/swagger-ui.html
+
+## UML
+
+Class diagrams are in [`docs/uml`](docs/uml).
