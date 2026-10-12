@@ -11,7 +11,11 @@ Spring Boot REST API for 5COSC019W Object Oriented Programming (University of We
 | GET | `/hello` | Greeting |
 | GET | `/goodbye` | Goodbye message |
 | GET | `/status` | Status with today's date |
+| GET | `/products` | All products |
 | GET | `/products/{id}` | A product by id |
+| POST | `/products` | Create a product (id is assigned by the service) |
+| DELETE | `/products/{id}` | Delete a product |
+| GET | `/products/search?name=` | Products whose name contains the text |
 | GET | `/customers/{id}` | A customer with a nested address |
 | GET | `/info` | About the application |
 
