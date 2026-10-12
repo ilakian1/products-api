@@ -16,6 +16,7 @@ Spring Boot REST API for 5COSC019W Object Oriented Programming (University of We
 | POST | `/products` | Create a product (id is assigned by the service) |
 | DELETE | `/products/{id}` | Delete a product |
 | GET | `/products/search?name=` | Products whose name contains the text |
+| GET | `/products/cheaper-than?price=` | Products cheaper than the given price |
 | GET | `/customers/{id}` | A customer with a nested address |
 | GET | `/info` | About the application |
 
@@ -29,4 +30,6 @@ Then open http://localhost:8080/swagger-ui.html
 
 ## UML
 
-Class diagrams are in [`docs/uml`](docs/uml).
+![ProductController, ProductService and Product](docs/uml/ProductService.png)
+
+All class diagrams (PlantUML sources and PNGs) are in [`docs/uml`](docs/uml).

@@ -38,4 +38,10 @@ public class ProductService {
                 .toList();
     }
 
+    public List<Product> findCheaperThan(double price) {
+        return products.stream()
+                .filter(p -> p.getPrice() < price)
+                .toList();
+    }
+
 }

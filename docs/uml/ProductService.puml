@@ -1,9 +1,13 @@
-@startuml
+@startuml ProductService
+skinparam classAttributeIconSize 0
+hide circle
 
 class Product {
   - id : Long
   - name : String
   - price : double
+  + Product()
+  + Product(id : Long, name : String, price : double)
   + getId() : Long
   + getName() : String
   + getPrice() : double
@@ -12,7 +16,7 @@ class Product {
   + setPrice(price : double) : void
 }
 
-class ProductService {
+class ProductService <<Service>> {
   - products : List<Product>
   - nextId : Long
   + getAllProducts() : List<Product>
@@ -20,21 +24,23 @@ class ProductService {
   + addProduct(product : Product) : Product
   + deleteProduct(id : Long) : void
   + findByName(name : String) : List<Product>
+  + findCheaperThan(price : double) : List<Product>
 }
 
-class ProductController {
+class ProductController <<RestController>> {
   - productService : ProductService
   + getAllProducts() : List<Product>
   + getProductById(id : Long) : Product
   + addProduct(product : Product) : Product
   + deleteProduct(id : Long) : void
   + search(name : String) : List<Product>
+  + cheaperThan(price : double) : List<Product>
 }
 
 ' ..> is a dependency: DASHED line, open arrow
-ProductController ..> ProductService
+ProductController ..> ProductService : uses
 
 ' --> is an association: SOLID line
-ProductService --> Product
+ProductService --> "0..*" Product : holds
 
 @enduml
